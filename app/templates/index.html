@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI AutoClipper</title><link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">✂</div><div><b>AI AutoClipper</b><small>VIDEO WORKSPACE</small></div></div>
+  <div class="nav-label">WORKSPACE</div>
+  <a class="nav active">▦ &nbsp; Overview</a><a class="nav">▤ &nbsp; Projects</a><a class="nav">◷ &nbsp; Publishing queue</a><a class="nav">▥ &nbsp; Analytics</a>
+  <div class="nav-label">SETTINGS</div><a class="nav">◎ &nbsp; Social accounts</a><a class="nav">⚙ &nbsp; Preferences</a>
+  <div class="side-bottom"><div class="status-dot"></div><span>Local processing workspace</span></div>
+</aside>
+<main>
+<header><div><div class="eyebrow">YOUR CONTENT WORKSPACE</div><h1>Turn long videos into <span>short-form content.</span></h1><p>Upload an authorized video, find the best moments, and create vertical clips.</p></div><div class="avatar">AC</div></header>
+<section class="stats">
+ <div class="stat"><small>PROJECTS</small><strong id="projectCount">0</strong><span>Created in this session</span></div>
+ <div class="stat"><small>CLIPS GENERATED</small><strong id="generatedCount">0</strong><span>Ready for review</span></div>
+ <div class="stat"><small>RENDER ENGINE</small><strong id="engineStatus">Checking</strong><span>FFmpeg availability</span></div>
+</section>
+<section class="workspace">
+ <div class="section-head"><div><div class="eyebrow">NEW PROJECT</div><h2>Start clipping</h2></div><div class="pill">● MVP WORKSPACE</div></div>
+ <div class="upload-panel" id="dropzone">
+  <div class="upload-icon">↑</div><h3>Upload your long-form video</h3><p>MP4, MOV, MKV, WEBM or M4V</p>
+  <label class="file-btn">Choose video<input type="file" id="videoFile" accept="video/*" hidden></label>
+  <div id="fileName" class="file-name">No file selected</div>
+ </div>
+ <label class="permission"><input type="checkbox" id="authorized"> <span>I own this video or have explicit permission to edit and redistribute it.</span></label>
+ <div class="controls">
+  <div><label for="targetClips">Target clips</label><select id="targetClips"><option>3</option><option selected>4</option><option>5</option><option>8</option><option>10</option></select></div>
+   <button id="analyzeBtn" disabled>Upload & analyze <span>→</span></button>
+ </div>
+ <div class="progress-wrap" id="progressWrap"><div class="progress-line"><div id="progressBar"></div></div><p id="statusText">Preparing your project…</p></div>
+</section>
+<section class="results">
+ <div class="section-head"><div><div class="eyebrow">AI OUTPUT</div><h2>Suggested clips</h2></div><span class="muted" id="resultMeta">No project yet</span></div>
+ <div id="clips" class="clip-grid"><div class="empty"><div>▣</div><b>Your clips will appear here</b><span>Upload a video to get started.</span></div></div>
+</section>
+<footer>AI AutoClipper V1 <span>Local MVP · Review clips before publishing</span></footer>
+</main></div>
+<script src="/static/app.js"></script>
+</body></html>
